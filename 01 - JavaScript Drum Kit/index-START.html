@@ -64,7 +64,7 @@
     event.target.classList.remove('playing'); //used to remove the add class
   }
 
-  function.playSound(e){
+  function playSound(e){
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
 
