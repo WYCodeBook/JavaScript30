@@ -59,6 +59,11 @@
 
 <script>
 
+  function removeTransition(e) {
+    if(e.propertyName != 'transform') return; //skip it if it's not a transform
+    event.target.classList.remove('playing'); //used to remove the add class
+  }
+
   function.playSound(e){
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
@@ -69,11 +74,6 @@
     audio.play();
 
     key.classList.add('playing'); //adding a class to a pressed key
-  }
-
-  function removeTransition(e) {
-    if(e.propertyName != 'transform') return; //skip it if it's not a transform
-    event.target.classList.remove('playing'); //used to remove the add class
   }
 
   const keys = document.querySelectorAll(`.key`);
